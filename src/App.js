@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import SideBar from './components/SideBar';
+import DashboardHeader from './components/DashboardHeader';
+import HomePage from './pages/Home';
+import MoldsPage from './pages/Molds';
+import Data from './pages/Data';
+import MachineData from './pages/MachineData';
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DashboardHeader />
+      <SideBar />
+
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/Molds' element={<MoldsPage />} />
+        <Route path='/Machine' element={<MachineData />} />
+        <Route path='/Data' element={<Data />} />
+      </Routes>
+
     </div>
   );
 }

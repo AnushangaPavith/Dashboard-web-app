@@ -1,38 +1,239 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(245, 240, 232, 0.79);
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar{
+    position: fixed;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #042331;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+}
+
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+}
+
+.sidebar ul li:hover a{
+    padding-left: 50px;
+    background: #063146;
+}
+
+.sidebar li.active {
+  padding-left: 10px;
+  background: #052a3c;
+}
+
+
+.header {
+  position: fixed;
+  background-color: #031a25;
   color: white;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  padding: 18px;
+  width: 100%;
+  margin-left: 250px;
+  font-size: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.header ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header a{
+  color: inherit;
+  text-decoration: none;
+
+}
+
+.machine-container{
+  display: grid;
+  position: flex;
+  padding-left: 270px;
+  padding-top: 90px;
+  padding-right: 10px;
+  top: 73px;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.machine-btn{
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.machine-box{
+  background-color: #adbfc7d5;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+  box-sizing: border-box;
+
+}
+
+.machine-box:hover{
+  background-color: #063146;
+  box-shadow: 0px 1px 10px #063146;
+}
+
+.machine-box div{
+  padding: 10px 5px;
+  
+}
+
+.mold-container{
+  display: grid;
+  position: flex;
+  padding-left: 270px;
+  padding-top: 100px;
+  padding-right: 5px;
+  top: 73px;
+  left: 250px;
+  row-gap: 2%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mold-btn{
+  font-size: 1.25rem;
+  color: #fff;
+
+}
+
+.mold-box{
+  background-color: #adbfc7d5;
+  width: 95%;
+  height: 250px;
+  border-radius: 10px;
+  text-align: left;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+  align-items: center;
+}
+
+/* .mold-box:hover{
+  width: 650px;
+  height: 380px;
+  box-shadow: 0px 1px 10px #063146;
+} */
+
+.mold-box div{
+  padding: 10px 5px; 
+}
+
+.machine-data-container{
+  display: grid;
+  position: flex;
+  padding-left: 270px;
+  padding-top: 90px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  top: 73px;
+  gap: 3%;
+  grid-template-columns: 1fr;
+}
+
+.detail-box2{
+  background-color: #adbfc7d5;
+  width: 97.7%;
+  height: 250px;
+  border-radius: 10px;
+  text-align: left;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+  align-items: center;
+}
+
+.two-grid {
+  display: grid;
+  position: flex;
+  grid-template-columns: 1fr 1fr;
+}
+
+.detail-box2 div{
+  padding: 15px;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.data-table {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  border: none;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.data-table td {
+  width: auto;
+  height: 25%;
+  text-align: left;
+}
+
+.data-table2 {
+  padding-left: 15px;
+  width: 100%;
+  align-items: center;
+  border: none;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.data-table2 .myTd {
+  width: auto;
+  height: 75px;
+  text-align: left;
+}
+
+::-webkit-scrollbar{
+  width: 15px;
+}
+
+::-webkit-scrollbar-track{
+  background: #031a25;
+}
+
+::-webkit-scrollbar-thumb{
+  background-image: linear-gradient(#052839, #0b557a);
+  border-radius: 25px;
 }

@@ -13,7 +13,6 @@ function MachineData(props) {
 
     // Get mold ID from API
     const [machine, setMachine] = useState([])
-
     useEffect(() => {
         fetch('http://localhost:3001/api/machines/'+ machineId)
         .then(results => {
@@ -25,9 +24,9 @@ function MachineData(props) {
 
     }, [machineId]);
 
+    // Assign mold ID
     let moldId;
     machine.map(m => moldId = m.moldID);
-    console.log(moldId);
     
     return (
         <div className="machine-data-container">

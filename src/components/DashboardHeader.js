@@ -15,7 +15,7 @@ function DashboardHeader() {
 
 function ChangePageName() {
     const currentPath = useLocation().pathname
-    console.log(currentPath)
+    // console.log(currentPath)
     let pageText
 
     if (currentPath === "/") {

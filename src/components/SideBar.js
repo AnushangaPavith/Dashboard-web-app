@@ -8,7 +8,7 @@ function SideBar () {
         <div className='sidebar'>
             <header><SiReactos /> Company Name</header>
             <ul>
-                <ActivePageLink to= "/"><MdSpaceDashboard /> Dashboard</ActivePageLink>
+                <ActivePageLink to= "/Home"><MdSpaceDashboard /> Dashboard</ActivePageLink>
                 <ActivePageLink to= "/Molds"><AiFillDatabase /> Production Data</ActivePageLink>
             </ul>
         </div>

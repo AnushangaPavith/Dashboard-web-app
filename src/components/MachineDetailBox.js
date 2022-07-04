@@ -1,10 +1,7 @@
 import React from 'react';
 import Boxes from '@material-ui/core/Box';
 
-function MachineDetailBox(props) {
-    const machineId = props.ID
-
-
+function MachineDetailBox() {
     return ( 
         <div>
             <Boxes className='detail-box2'>

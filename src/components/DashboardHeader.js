@@ -16,19 +16,19 @@ function DashboardHeader() {
 function ChangePageName() {
     const currentPath = useLocation().pathname
     const data = useLocation().state;
-    // console.log(currentPath)
+    console.log(currentPath)
     let pageText
 
     if (currentPath === "/") {
+        pageText = "Login"
+    }
+    else if (currentPath === "/Home" || currentPath === "/home") {
         pageText = "Machines Overview"
     }
-    else if(currentPath === "/Molds") {
+    else if(currentPath === "/Molds" || currentPath === "/molds") {
         pageText = "Molds Overview"
     }
-    else if(currentPath === "/machines") {
-        pageText = "Machine No"
-    }
-    else if(currentPath === "/Machine"){
+    else if(currentPath === "/Machine" || currentPath === "/machine"){
         const machineId = data.id;
         pageText = "Machine " + machineId
     }

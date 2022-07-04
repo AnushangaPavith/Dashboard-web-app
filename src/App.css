@@ -91,7 +91,7 @@ body {
   padding-right: 10px;
   top: 73px;
   gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
 }
 
 .machine-btn{
@@ -128,8 +128,8 @@ body {
   padding-right: 5px;
   top: 73px;
   left: 250px;
-  row-gap: 2%;
-  grid-template-columns: 1fr 1fr;
+  row-gap: 30px;
+  grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
 }
 
 .mold-btn{
@@ -140,7 +140,7 @@ body {
 
 .mold-box{
   background-color: #adbfc7d5;
-  width: 95%;
+  width: 500px;
   height: 250px;
   border-radius: 10px;
   text-align: left;
@@ -236,4 +236,60 @@ body {
 ::-webkit-scrollbar-thumb{
   background-image: linear-gradient(#052839, #0b557a);
   border-radius: 25px;
+}
+
+.login-container{
+  position: fixed;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-right: 30px;
+  top: 200px;
+  left: 500px;
+  outline: 2px;
+  width: 300px;
+  height: 300px;
+  font-size: 20px;
+  box-sizing: content-box;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.login-header{
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  line-height: 10px;
+  position: fixed;
+  background-color: #031a25;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  padding: 18px;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.input{
+  box-sizing: border-box;
+  outline: none;
+  border:solid 2px;
+  border-radius: 4px;
+  color: #031a25;
+  width:100%;
+  padding: 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.submitButton{
+  padding-top: 16px;
+}
+
+.btn{
+  width: 100%;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 4px;
 }

@@ -31,11 +31,11 @@ function MachineData(props) {
     return (
         <div className="machine-data-container">
             <div className='two-grid'>
-                <DataBox />
+                <DataBox ID = {machineId} />
                 <GraphBox />
             </div>
-            <MachineDetailBox />
-            <MoldDetailBox />
+            <MachineDetailBox ID = {machineId} />
+            <MoldDetailBox ID = {moldId} />
         </div>
     )
 }

@@ -32,26 +32,25 @@ function DataBox(props) {
     });
 
     return (
-        <Boxes className='mold-box'>
-            <table className='data-table'>
+        <Boxes className='machine-databox1'>
+            <table className='machine-data-table'>
                 <tbody>
                     <tr>
-                        <td>Product Count:</td>
-                        <td>{prodCount}</td>
-
-                        <td>Start Date:</td>
-                        <td>{startDate}</td>
+                        <td className='label-text'>Product Count:</td>
+                        <td><Boxes className='machine-box1-numbers'>{prodCount}</Boxes></td>
+                        <td className='label-text'>Start Date:</td>
+                        <td><Boxes className='machine-box1-date'>{startDate}</Boxes></td>
                     </tr>
                     <tr>
-                        <td>Failed Count:</td>
-                        <td>{failCount}</td>
-                        <td>End Date:</td>
-                        <td>{endDate}</td>
+                        <td className='label-text'>Failed Count:</td>
+                        <td><Boxes className='machine-box1-numbers'>{failCount}</Boxes></td>
+                        <td className='label-text'>End Date:</td>
+                        <td><Boxes className='machine-box1-date'>{endDate}</Boxes></td>
                     </tr>
                     <tr>
-                        <td>Product Rate:</td>
-                        <td>{prodRate}</td>
-                        <td>&nbsp;</td>
+                        <td className='label-text'>Product Rate:</td>
+                        <td><Boxes className='machine-box1-numbers'>{prodRate}</Boxes></td>
+                        <td className='label-text'>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
                 </tbody>

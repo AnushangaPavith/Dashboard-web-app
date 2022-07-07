@@ -83,6 +83,8 @@ body {
 
 }
 
+/* ############################### Home Page ####################### */
+
 .machine-container{
   display: grid;
   position: flex;
@@ -94,19 +96,21 @@ body {
   grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
 }
 
-.machine-btn{
+/* .machine-btn{
   font-size: 1.25rem;
   color: #fff;
-}
+} */
 
 .machine-box{
-  background-color: #adbfc7d5;
+  background-color: #417186;
   width: 150px;
   height: 150px;
   border-radius: 10px;
   transition: .4s;
   box-shadow: 0px 0px 4px #063146;
   box-sizing: border-box;
+  color: #fff;
+  
 
 }
 
@@ -115,86 +119,56 @@ body {
   box-shadow: 0px 1px 10px #063146;
 }
 
-.machine-box div{
+.machine-box-header{
   padding: 10px 5px;
+  font-size: 1.25rem;
+  text-shadow: 2px 2px 4px #063146;
+  text-align: center;
+  /* background-color: #031a25; */
   
 }
 
-.mold-container{
-  display: grid;
-  position: flex;
-  padding-left: 270px;
-  padding-top: 100px;
-  padding-right: 5px;
-  top: 73px;
-  left: 250px;
-  row-gap: 30px;
-  grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
+.machine-icon{
+  /* background-color: #031a25; */
+  text-align: center;
+  
 }
 
-.mold-btn{
-  font-size: 1.25rem;
-  color: #fff;
-
-}
-
-.mold-box{
-  background-color: #adbfc7d5;
-  width: 500px;
-  height: 250px;
-  border-radius: 10px;
-  text-align: left;
-  transition: .4s;
-  box-shadow: 0px 0px 4px #063146;
-  align-items: center;
-}
-
-/* .mold-box:hover{
-  width: 650px;
-  height: 380px;
+.machine-icon img{
+  /* opacity: 0.5; */
+  border-radius: 35%;
+  /* height: 50px; */
+  /* border-radius: 10px; */
+  /* height: 50px; */
   box-shadow: 0px 1px 10px #063146;
-} */
+  /* background-color: white; */
+  /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAE1klEQVRoge2YXWxTZRjHf+/p2m61Y3XYgNkQuFATwBCGH5iALKEbQUmUkHnRbsSPUW5QIOqFJsTEG4kfCWYgjgFK3HazKFOEZmwIW0hASCDEDC8wkjC+1ME27KZru/N4wdp0o+e0p2VDk/2uet7neZ/3//R93o9zYIoppvhfo+63AABfIPiEEn0vyI95fa73Q6G64Uz73tcEqqqqbP12z9sgHwCOO61yUUM2tDXvO5ZJjIwSkMM4cTmDKAmAWjDa+jNKNTF9eLeaT8Sq+Mqa2rl6jP1KsSzVkKAatai+ua1l762cEpCjBSXY9EMoFhq4nMNmW62WDl0zjNHpfB6oB0oTCdTXhAF3muGvg2xqb97bYuSgmfWWwzjTiAdYxMjIQemOl0BKxogfZax4UeeB/nE+Dwua30xjnpkRl3NDGvFxyna0Lhuu8D9uYP7arG8M5NNbhdrWwr7odLvd/hFINaAE/rIrecOss3kCSgVAEo+nL5ewvWsJAFuWn+KpWVcTthWP/cb33UYJGNKtadq6tsbdZ0efbwDrfNW1+5TOLoX6ItTUcMUsgGkJgcxLftretYTeQRe9g65EInHmPDhgTbqoDz3RgbIk8Qk6GvccjzpiizzR/h3pwqRJIOnv/4+SbgYuJD9tWX4Kr3sIr3uIzc+dHON56VaRtZGVvNtvLzq7sjpYNt7kq64tt0fyzvXbPRvThjEzSpdzI0JdJnrqTjzNQYM1cGTD3Yu4sr4m/vPOInbbthb2ReKLuAbgziJmXqhpj+E6ME+gGwe9zlPAIjO/nr6i8KzSP4rVk0RTxul09jBuG01KYNRJnUfJbMAzphnV2tHcsMZobNMSUvOJYLOtBs4Z+Vz8czrv/FDhqvzkNa9hICEI9IxrDY8dTBYyTjxwXaE3m2k030YBtXTomnSzhF7n+qsDhVuLXf/MALh008PRX+cS+uVRYrqmicaLwK6UMcqHQ8AjyW2VNUzOVSIZn3+9TyHtBoE6jjTvqbASb9Iuc3EWB4P24rB+AyhOYY5qUZmZ7h9LxcrqYNmIrjcoke88sdvbWlpaMr4cWr5OV/hf/xLUKwbhXm1vbvjKasxcSHeQpeihHTC0iW64W0wUlhPIu5nfBup2SqNSK1cFAtNyVmUBywmEQnXDgoQMzM4RClblqMkS1ksI0BSGZaQLk1pGWSUQiTgOAX+nsil44dmqLQU5qbJAVgkcb/k8jKQ+DwC32xm2dB7kQlYJAKBMdiN98najrBOIOqKtkPryBuqlxcGgPdvYVsjpu1Clv7ZdwPfM7Cu8ufQnvO4hAK4OTKPz0pzNgU1nPrsnKk3IvoQAHb6dWRjmvRUnEuIBSopus2b+hW3S8cCMnBWmIacEHI7YgbfKT0qBPcrpyyX4G9fib1zLmZ4SCuyxfLHFdt4roUbkVELSmR8EqQfwN66ld9AFgNc9RFPgm1EneVmVRww/TOVK1jMgxwpKQT5O66jUTulyG7/s5Ej2JaTp9UDi3mPywu+FiSulrEpIOvPXgey31mliSslyAtLl9iLRbsBqWfQSzVugfIO/Wx3TDOslJNFdWBcP8BD2WH0W/UzJaAYq/LV3fR6fYK4opYJHmhqMru0JMp2ByRQPUCoiGc1WpglMpvg4szJxyukknmKKKabImX8BaqSiT4BhbdQAAAAASUVORK5CYII="); */
 
-.mold-box div{
-  padding: 10px 5px; 
+  
 }
+
+
+
+
+
+
+
+
+/* ############################### Machine Page ####################### */
 
 .machine-data-container{
   display: grid;
   position: flex;
-  padding-left: 270px;
+  padding-left: 260px;
   padding-top: 90px;
-  padding-right: 10px;
+  padding-right: 0px;
   padding-bottom: 20px;
   top: 73px;
   gap: 3%;
   grid-template-columns: 1fr;
 }
 
-.detail-box2{
-  background-color: #adbfc7d5;
-  width: 97.7%;
-  height: 250px;
-  border-radius: 10px;
-  text-align: left;
-  transition: .4s;
-  box-shadow: 0px 0px 4px #063146;
-  align-items: center;
-}
-
-.two-grid {
-  display: grid;
-  position: flex;
-  grid-template-columns: 1fr 1fr;
-}
-
-.detail-box2 div{
-  padding: 15px;
-  font-size: 1.25rem;
-  color: #ffffff;
-}
-
-.data-table {
+.machine-data-table {
   padding: 15px;
   width: 100%;
   height: 100%;
@@ -202,28 +176,234 @@ body {
   border: none;
   font-size: 1.25rem;
   color: #ffffff;
+  font-weight: bold;
 }
 
-.data-table td {
+.machine-data-table td {
   width:auto;
   height: 25%;
-  text-align: left;
+  text-align: center;
+  /* background-color: #031a25; */
 }
 
-.data-table2 {
+.machine-data-page-table tr td {
+  width: 500px;
+  padding: 0.3%;
+}
+
+
+/* ----------------machine box 1----------------- */
+.machine-databox1{
+  background-color: #417186;
+  height: 250px;
+  border-radius: 10px;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+}
+
+.machine-box1-numbers{
+  background-color: #28617a;
+  border-radius: 10px;
+  text-align: center;
+  width: auto;
+  padding: 10px 5px;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.machine-box1-date{
+  background-color: #28617a;
+  border-radius: 10px;
+  text-align: center;
+  width: auto;
+  min-width: 60px;
+  padding: 10px 5px;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.label-text {
+  width: auto;
+  text-align: left;
+  min-width: 100px;
+}
+
+/* --------------------------------------- */
+
+
+
+
+/* ----------------machine box 2----------------- */
+
+/* same as machine-databox1 */
+.machine-databox2{
+  background-color: #417186;
+  width: 500px;
+  height: 250px;
+  border-radius: 10px;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+}
+
+/* --------------------------------------- */
+
+
+
+
+/* ----------------machine box 3----------------- */
+.machine-databox3{
+  /* background-color: #adbfc7d5; */
+  background-color: #417186;
+  width: 98.7%;
+  height: 250px;
+  border-radius: 10px;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* same as mold header */
+.machine-databox3-header{
+  padding: 10px 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px #063146;
+}
+/* --------------------------------------- */
+
+
+/* ----------------machine box 4----------------- */
+.machine-box4{
+  /* background-color: #adbfc7d5; */
+  background-color: #417186;
+  width: 98.7%;
+  height: 250px;
+  border-radius: 10px;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+  color: #fff;
+}
+
+.machine-databox4{
+  background-color: #28617a;
+  border-radius: 10px;
+  text-align: center;
+  width: auto;
+  padding: 10px 5px;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.label-text-2 {
+  width: auto;
+  text-align: left;
+  min-width: 120px;
+}
+
+/* --------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* ####################### Mold Page #############################*/
+
+.mold-container{
+  display: grid;
+  position: flex;
+  padding-left: 270px;
+  padding-top: 100px;
+  row-gap: 30px;
+  grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
+}
+
+/* .mold-btn{
+  font-size: 5.25rem;
+  color: #fff;
+
+} */
+
+.mold-box{
+  background-color: #417186;
+  /* width: 600px; */
+  width: 97%;
+  min-width: 350px;
+  height: 250px;
+  border-radius: 10px;
+  text-align: left;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+  align-items: center;
+  color: #fff;
+}
+
+
+/* .mold-box:hover{
+  width: 650px;
+  height: 380px;
+  box-shadow: 0px 1px 10px #063146;
+} */
+
+.mold-box-header{
+  padding: 10px 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px #063146;
+}
+
+
+.mold-data-table {
   padding-left: 15px;
   width: 100%;
   align-items: center;
   border: none;
   font-size: 1.25rem;
   color: #ffffff;
+  font-weight: bold;
+  /* text-shadow: #031a25; */
+  
 }
 
-.data-table2 .myTd {
+.mold-data-table td {
   width: auto;
   height: 75px;
-  text-align: left;
+  text-align: right;
+  
 }
+
+.mold-box-data{
+  padding: 10px 5px;
+  background-color: #28617a;
+  border-radius: 10px;
+  text-align: center;
+  width: auto;
+  min-width: 100px;
+  margin: 5px;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.mold-box-numbers{
+  padding: 10px 5px;
+  background-color: #28617a;
+  border-radius: 10px;
+  text-align: center;
+  width: auto;
+  min-width: 100px;
+  margin: 5px;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+
+/* ----------------------scroll styles-------------------------- */
 
 ::-webkit-scrollbar{
   width: 15px;
@@ -237,7 +417,12 @@ body {
   background-image: linear-gradient(#052839, #0b557a);
   border-radius: 25px;
 }
+/* ------------------------------------------------------------ */
 
+
+
+
+/* ----------------------------login------------------------------ */
 .login-container{
   position: fixed;
   padding-left: 30px;
@@ -292,4 +477,25 @@ body {
   font-size: 14px;
   padding: 12px;
   border-radius: 4px;
+}
+/* ------------------------------------------------------------ */
+
+
+
+
+/* ----------------------------chart--------------------------- */
+.Chart li {
+  list-style-type: none;
+}
+
+.Chart ul {
+  padding: 0;
+  width: 100%;
+}
+
+.ChartLegend {
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  margin-right: 0.5em;
 }

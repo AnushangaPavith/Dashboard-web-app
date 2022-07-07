@@ -21,7 +21,11 @@ function Homepage() {
 
     let i = 1;
 
-    const machineList = machines.map(machine => <Link to='/Machine' state={{id:machine.machineID}} className="machine-btn"  key={machine.machineID}><Boxes className='machine-box'> <div>{'Machine ' + i++}</div> </Boxes></Link>)
+    const machineList = machines.map(machine => <Link to='/Machine' state={{id:machine.machineID}}  key={machine.machineID}>
+        <Boxes className='machine-box'> 
+        <div className='machine-box-header'>{'Machine ' + i++}</div>
+        <div className='machine-icon'><img src="icon.png" alt='machine logo'/></div> 
+        </Boxes></Link>)
     // 'state' in Link tag sends machine ID to the page that linked
 
     return (
@@ -29,5 +33,7 @@ function Homepage() {
     )
 
 }
+
+
 
 export default Homepage;

@@ -30,12 +30,20 @@ function MachineData(props) {
     
     return (
         <div className="machine-data-container">
-            <div className='two-grid'>
-                <DataBox ID = {machineId} />
-                <GraphBox />
-            </div>
-            <MachineDetailBox ID = {machineId} />
-            <MoldDetailBox ID = {moldId} />
+            <table className='machine-data-page-table'>
+                <tbody>
+                    <tr>
+                        <td><DataBox ID = {machineId} /></td>
+                        <td><GraphBox ID = {machineId}/></td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2}><MachineDetailBox ID = {machineId} /></td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2}><MoldDetailBox ID = {moldId} /></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }

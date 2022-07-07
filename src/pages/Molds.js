@@ -2,6 +2,7 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import Boxes from '@material-ui/core/Box';
 import {Link} from 'react-router-dom';
+import { GiSwordMold } from "react-icons/gi";
 
 function MoldsPage() {
 
@@ -21,22 +22,22 @@ function MoldsPage() {
 
     let i = 1;
 
-    const moldList = molds.map(mold => <Link to="/Molds" className="mold-btn">
+    const moldList = molds.map(mold => <Link to="/Molds">
     <Boxes className='mold-box'>
-        <div>{'Mold ' + i++}</div>
-        <table className='data-table2'>
+        <div className='mold-box-header'><GiSwordMold/> {'Mold ' + i++} </div>
+        <table className='mold-data-table'>
             <tbody>
                 <tr>
-                    <td className='myTd'>Mold ID:</td>
-                    <td className='myTd'>{mold.moldID}</td>
-                    <td className='myTd'>material:</td>
-                    <td className='myTd'>{mold.material}</td>
+                    <td>Mold ID:</td>
+                    <td><Boxes className='mold-box-numbers'>{mold.moldID}</Boxes></td>
+                    <td>Material:</td>
+                    <td><Boxes className='mold-box-data'>{mold.material}</Boxes></td>
                 </tr>
                 <tr>
-                    <td className='myTd'>MONA No:</td>
-                    <td className='myTd'>{mold.monaNumber}</td>
-                    <td className='myTd'>Mold Maker:</td>
-                    <td className='myTd'>{mold.moldMaker}</td>
+                    <td>MONA No:</td>
+                    <td><Boxes className='mold-box-numbers'>{mold.monaNumber}</Boxes></td>
+                    <td>Mold Maker:</td>
+                    <td><Boxes className='mold-box-data'>{mold.moldMaker}</Boxes></td>
                 </tr>
             </tbody>
         </table>

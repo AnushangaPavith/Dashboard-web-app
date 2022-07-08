@@ -32,7 +32,9 @@ function ChangePageName() {
         const machineId = data.id;
         pageText = "Machine " + machineId
     }
-
+    else if(currentPath === "/AddMachine" || currentPath === "/Addmachine" || currentPath === "/addmachine"){
+        pageText = "Add Machine"
+    }
     return(
         <div>{pageText}</div>
     );

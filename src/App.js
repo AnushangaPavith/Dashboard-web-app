@@ -5,8 +5,9 @@ import LoginHeader from './components/LoginHeader';
 import HomePage from './pages/Home';
 import MoldsPage from './pages/Molds';
 import Data from './pages/Data';
-import LoginPage from './pages/Login';
+import Login from './pages/Login';
 import MachineData from './pages/MachineData';
+import AddMachine from './pages/AddMachine';
 import {Routes, Route} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
@@ -17,11 +18,12 @@ function App() {
       <LayoutManager/>
 
       <Routes>
-        <Route path='/' element={<LoginPage/>}/>
+      <Route path='/' element={<Login/>}/>
         <Route path='/Home' element={<HomePage />} />
         <Route path='/Molds' element={<MoldsPage />} />
         <Route path='/Machine' element={<MachineData />} />
         <Route path='/Data' element={<Data />} />
+        <Route path='/AddMachine' element={<AddMachine />} />
       </Routes>
 
     </div>

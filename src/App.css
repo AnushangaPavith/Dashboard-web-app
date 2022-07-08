@@ -110,14 +110,13 @@ body {
   box-shadow: 0px 0px 4px #063146;
   box-sizing: border-box;
   color: #fff;
-  
-
 }
 
 .machine-box:hover{
   background-color: #063146;
   box-shadow: 0px 1px 10px #063146;
 }
+
 
 .machine-box-header{
   padding: 10px 5px;
@@ -128,10 +127,21 @@ body {
   
 }
 
+/* ----------------------machine icon------------------------ */
+
+.machine-box:hover .back-img{
+  opacity: 0.9;
+}
+.machine-box:hover .front-img{
+  opacity: 0;
+}
+
 .machine-icon{
   /* background-color: #031a25; */
-  text-align: center;
-  
+  /* width: 50px; */
+  height: 70%;
+  /* position: absolute; */
+  /* background-color: antiquewhite; */
 }
 
 .machine-icon img{
@@ -140,16 +150,81 @@ body {
   /* height: 50px; */
   /* border-radius: 10px; */
   /* height: 50px; */
-  box-shadow: 0px 1px 10px #063146;
+  /* box-shadow: 0px 1px 10px #063146; */
   /* background-color: white; */
-  /* background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAE1klEQVRoge2YXWxTZRjHf+/p2m61Y3XYgNkQuFATwBCGH5iALKEbQUmUkHnRbsSPUW5QIOqFJsTEG4kfCWYgjgFK3HazKFOEZmwIW0hASCDEDC8wkjC+1ME27KZru/N4wdp0o+e0p2VDk/2uet7neZ/3//R93o9zYIoppvhfo+63AABfIPiEEn0vyI95fa73Q6G64Uz73tcEqqqqbP12z9sgHwCOO61yUUM2tDXvO5ZJjIwSkMM4cTmDKAmAWjDa+jNKNTF9eLeaT8Sq+Mqa2rl6jP1KsSzVkKAatai+ua1l762cEpCjBSXY9EMoFhq4nMNmW62WDl0zjNHpfB6oB0oTCdTXhAF3muGvg2xqb97bYuSgmfWWwzjTiAdYxMjIQemOl0BKxogfZax4UeeB/nE+Dwua30xjnpkRl3NDGvFxyna0Lhuu8D9uYP7arG8M5NNbhdrWwr7odLvd/hFINaAE/rIrecOss3kCSgVAEo+nL5ewvWsJAFuWn+KpWVcTthWP/cb33UYJGNKtadq6tsbdZ0efbwDrfNW1+5TOLoX6ItTUcMUsgGkJgcxLftretYTeQRe9g65EInHmPDhgTbqoDz3RgbIk8Qk6GvccjzpiizzR/h3pwqRJIOnv/4+SbgYuJD9tWX4Kr3sIr3uIzc+dHON56VaRtZGVvNtvLzq7sjpYNt7kq64tt0fyzvXbPRvThjEzSpdzI0JdJnrqTjzNQYM1cGTD3Yu4sr4m/vPOInbbthb2ReKLuAbgziJmXqhpj+E6ME+gGwe9zlPAIjO/nr6i8KzSP4rVk0RTxul09jBuG01KYNRJnUfJbMAzphnV2tHcsMZobNMSUvOJYLOtBs4Z+Vz8czrv/FDhqvzkNa9hICEI9IxrDY8dTBYyTjxwXaE3m2k030YBtXTomnSzhF7n+qsDhVuLXf/MALh008PRX+cS+uVRYrqmicaLwK6UMcqHQ8AjyW2VNUzOVSIZn3+9TyHtBoE6jjTvqbASb9Iuc3EWB4P24rB+AyhOYY5qUZmZ7h9LxcrqYNmIrjcoke88sdvbWlpaMr4cWr5OV/hf/xLUKwbhXm1vbvjKasxcSHeQpeihHTC0iW64W0wUlhPIu5nfBup2SqNSK1cFAtNyVmUBywmEQnXDgoQMzM4RClblqMkS1ksI0BSGZaQLk1pGWSUQiTgOAX+nsil44dmqLQU5qbJAVgkcb/k8jKQ+DwC32xm2dB7kQlYJAKBMdiN98najrBOIOqKtkPryBuqlxcGgPdvYVsjpu1Clv7ZdwPfM7Cu8ufQnvO4hAK4OTKPz0pzNgU1nPrsnKk3IvoQAHb6dWRjmvRUnEuIBSopus2b+hW3S8cCMnBWmIacEHI7YgbfKT0qBPcrpyyX4G9fib1zLmZ4SCuyxfLHFdt4roUbkVELSmR8EqQfwN66ld9AFgNc9RFPgm1EneVmVRww/TOVK1jMgxwpKQT5O66jUTulyG7/s5Ej2JaTp9UDi3mPywu+FiSulrEpIOvPXgey31mliSslyAtLl9iLRbsBqWfQSzVugfIO/Wx3TDOslJNFdWBcP8BD2WH0W/UzJaAYq/LV3fR6fYK4opYJHmhqMru0JMp2ByRQPUCoiGc1WpglMpvg4szJxyukknmKKKabImX8BaqSiT4BhbdQAAAAASUVORK5CYII="); */
-
+  /* width: 100%; */
+  /* height: 100%; */
+  width: 30px;
+  height: 30px;
+  /* filter: grayscale(100%); */
+  /* filter: drop-shadow(1px 2px 2px #063146); */
+  
   
 }
 
+.machine-icon div{
+  /* background-color: #031a25; */
+  height: 50px;
+  width: 50px;
+  padding-left: 10px;
+  padding-top: 50px;
+}
+
+.back-img{
+  height: 48px;
+  /* height: 40px; */
+}
+
+.back-img{
+  position: absolute;
+
+  opacity: 0;
+}
+
+.front-img{
+  opacity: 0.6;
+}
+
+
+/* --------------------------------------------------------- */
 
 
 
+/* ----------------------------new machine box--------------------- */
+.machine-add-box{
+  background-color: #97b1bd;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  transition: .4s;
+  box-shadow: 0px 0px 4px #063146;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.machine-add-box:hover{
+  box-shadow: 0px 0px 6px #063146;
+}
+
+.machine-add-box:hover .machine-plus-icon{
+  opacity: 0.5;
+}
+
+.machine-plus-icon{
+  width: 100px;
+  height: 100px;
+  opacity: 0.2;
+  transition: all 0.7s ease;
+}
+
+.machine-add-box div{
+  /* padding-left: 10px; */
+  /* background-color: #063146; */
+  text-align: center;
+  padding-top: 25px;
+}
+
+/* --------------------------------------------------------- */
 
 
 
@@ -159,9 +234,9 @@ body {
 .machine-data-container{
   display: grid;
   position: flex;
-  padding-left: 260px;
+  padding-left: 270px;
   padding-top: 90px;
-  padding-right: 0px;
+  padding-right: 10px;
   padding-bottom: 20px;
   top: 73px;
   gap: 3%;
@@ -186,19 +261,24 @@ body {
   /* background-color: #031a25; */
 }
 
-.machine-data-page-table tr td {
-  width: 500px;
-  padding: 0.3%;
+.machine-data-page-table td {
+  padding: 0.5%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
 /* ----------------machine box 1----------------- */
 .machine-databox1{
   background-color: #417186;
+  width: 97%;
+  min-width: 250px;
   height: 250px;
   border-radius: 10px;
   transition: .4s;
   box-shadow: 0px 0px 4px #063146;
+  align-items: center;
+  color: #fff;
 }
 
 .machine-box1-numbers{
@@ -206,6 +286,7 @@ body {
   border-radius: 10px;
   text-align: center;
   width: auto;
+  min-width: 50px;
   padding: 10px 5px;
   font-weight: normal;
   font-size: 1.2rem;
@@ -216,7 +297,7 @@ body {
   border-radius: 10px;
   text-align: center;
   width: auto;
-  min-width: 60px;
+  min-width: 80px;
   padding: 10px 5px;
   font-weight: normal;
   font-size: 1.2rem;
@@ -224,8 +305,12 @@ body {
 
 .label-text {
   width: auto;
-  text-align: left;
-  min-width: 100px;
+  min-width: 120px;
+}
+
+
+.machine-databox1 ul {
+  padding-top: 10px;
 }
 
 /* --------------------------------------- */
@@ -238,7 +323,7 @@ body {
 /* same as machine-databox1 */
 .machine-databox2{
   background-color: #417186;
-  width: 500px;
+  width: 600px;
   height: 250px;
   border-radius: 10px;
   transition: .4s;
@@ -270,6 +355,12 @@ body {
   font-size: 1.5rem;
   text-shadow: 2px 2px 4px #063146;
 }
+
+.machine-box3-icon{
+  width: 25px;
+  height: 25px;
+  filter: drop-shadow(1px 2px 2px #063146);
+}
 /* --------------------------------------- */
 
 
@@ -288,17 +379,11 @@ body {
 .machine-databox4{
   background-color: #28617a;
   border-radius: 10px;
-  text-align: center;
-  width: auto;
+  text-align: left;
+  width: 300px;
   padding: 10px 5px;
   font-weight: normal;
   font-size: 1.2rem;
-}
-
-.label-text-2 {
-  width: auto;
-  text-align: left;
-  min-width: 120px;
 }
 
 /* --------------------------------------- */
@@ -332,9 +417,7 @@ body {
 
 .mold-box{
   background-color: #417186;
-  /* width: 600px; */
   width: 97%;
-  min-width: 350px;
   height: 250px;
   border-radius: 10px;
   text-align: left;
@@ -358,6 +441,10 @@ body {
   text-shadow: 2px 2px 4px #063146;
 }
 
+.mold-box-icon{
+  filter: drop-shadow(1px 3px 2px #063146);
+}
+
 
 .mold-data-table {
   padding-left: 15px;
@@ -367,6 +454,7 @@ body {
   font-size: 1.25rem;
   color: #ffffff;
   font-weight: bold;
+  padding-right: 10px;
   /* text-shadow: #031a25; */
   
 }
@@ -375,7 +463,6 @@ body {
   width: auto;
   height: 75px;
   text-align: right;
-  
 }
 
 .mold-box-data{
@@ -476,10 +563,11 @@ body {
   width: 100%;
   font-size: 14px;
   padding: 12px;
+  margin-top: 20px;
   border-radius: 4px;
 }
-/* ------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------- */
 
 
 

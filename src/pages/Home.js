@@ -28,8 +28,8 @@ function Homepage() {
         <div className='machine-box-header'>{'Machine ' + i++}</div>
         <div className='machine-icon'>
             <div>
-            <img class='back-img' src="image2.gif" alt='machine logo2'/>
-            <img class='front-img' src="image1.png" alt='machine logo'/>
+            <img className='back-img' src="image2.gif" alt='machine logo2'/>
+            <img className='front-img' src="image1.png" alt='machine logo'/>
             </div>
         </div> 
         </Boxes></Link>)

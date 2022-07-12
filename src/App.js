@@ -8,6 +8,7 @@ import Data from './pages/Data';
 import Login from './pages/Login';
 import MachineData from './pages/MachineData';
 import AddMachine from './pages/AddMachine';
+import RequireAuth from './auth/RequireAuth';
 import {Routes, Route} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
@@ -19,11 +20,14 @@ function App() {
 
       <Routes>
       <Route path='/' element={<Login/>}/>
+
+      <Route element={<RequireAuth />}>
         <Route path='/Home' element={<HomePage />} />
         <Route path='/Molds' element={<MoldsPage />} />
         <Route path='/Machine' element={<MachineData />} />
         <Route path='/Data' element={<Data />} />
         <Route path='/AddMachine' element={<AddMachine />} />
+      </Route>
       </Routes>
 
     </div>

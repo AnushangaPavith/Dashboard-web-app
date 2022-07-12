@@ -1,72 +1,17 @@
-import { Container } from '@material-ui/core';
-import React, { useRef, useState, useEffect, useContext } from 'react';
-import InputField from '../components/InputField';
-import SubmitButton from '../components/SubmitButton';
-import AuthContext from '../config/AuthProvider';
+import React, { useRef, useState, useEffect } from 'react';
+import useAuth from '../auth/UseAuth';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import axios from '../auth/axios';
 
-import axios from '../config/axios';
-const LOGIN_URL = 'http://localhost:3001/api/users/login';
-
-class Loginform extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            empID:'',
-            password:'',
-            buttonDisabled: false
-        }
-    }
-
-    setInputValue(property,val){
-        val.val.trim();
-        if (val.length>12){
-            return;
-        }
-        this.setState({
-            [property] : val
-        })
-    }
-
-    resetForm(){
-        this.setState({
-            empID : '',
-            password : '',
-            buttonDisabled : false
-        })
-    }
-
-    render(){
-        return (
-            <div className="login-container">
-                <h3>Login to your account</h3><br></br>
-                <InputField
-                    type='text'
-                    placeholder='Employee ID'
-                    /*value={this.state.empID ? this.state.empID : ''}
-                    onChange={(val) => this.setInputValue('empID',val)}*/
-                />
-
-                <InputField
-                    type='password'
-                    placeholder='Password'
-                    /*value={this.state.empID ? this.state.empID : ''}
-                    onChange={(val) => this.setInputValue('empID',val)}*/
-                />
-
-                <SubmitButton
-                    text = 'Login'
-                    disabled = {this.state.buttonDisabled}
-                />
-            </div>
-        )
-    }
-}
-
-// export default Loginform;
+const LOGIN_URL = '/api/users/login';
 
 const Login = () => {
 
-    const { setAuth } = useContext(AuthContext);
+    const { setAuth } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/Home";
 
     const userRef = useRef();
     const errRef = useRef();
@@ -85,29 +30,46 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         try {
-            // const response = await axios.post(LOGIN_URL, 
-            //     JSON.stringify({empID: user, password: pwd})
-            // );
+            const response = await axios.post(LOGIN_URL, 
+                JSON.stringify({empID: user, password: pwd}), 
+                {
+                    headers: { 'Content-Type' : 'application/json'},
+                    // withCredentials: true
+                }
+            );
+            console.log(JSON.stringify(response?.data));
 
-            // console.log(JSON.stringify(response?.data));
+            const accessToken = response?.data?.token;
+            const admin = response?.data?.admin.data[0];
 
-            let result = await fetch(LOGIN_URL, {
-                method: 'post',
-                body: JSON.stringify({
-                empID: user, password: pwd
-            })
-        });
-            
+            console.log(admin);
+
+            setAuth({ user, pwd, accessToken });
+
             setUser('');
             setPwd('');
+            // setSuccess(true);
+            navigate(from, { replace: true });
+
         } catch (error) {
-            console.log(error);
+
+            if(!error?.response) {
+                setErrMsg('No Server Response.');
+            } else if(error.response?.status === 400) {
+                setErrMsg("Missing Data.");
+            } else if(error.response?.status === 401) {
+                setErrMsg("Unauthorized.");
+            } else {
+                setErrMsg("Login Failed.");
+            }
+            errRef.current.focus();
         }
     }
 
     return (
-        <div className='login-container'>            
+            <div className='login-container'>
             <h3>Login to your account</h3><br></br>
 
             <p ref={errRef} className={errMsg ? "errMsg" : "offScreen"} aria-live="assertive">{errMsg}</p>
@@ -130,15 +92,14 @@ const Login = () => {
                     id='password'
                     placeholder= 'Password'
                     onChange={(e) => setPwd(e.target.value)}
-                    // value = {pwd}
+                    value = {pwd}
                     required
                 />
 
                 <button className='btn'>
                     Login
                 </button> 
-            </form>          
-
+            </form>
         </div>
     )
 }

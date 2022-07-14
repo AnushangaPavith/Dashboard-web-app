@@ -24,7 +24,7 @@ function MoldsPage() {
 
     const moldList = molds.map(mold => <Link to="/Molds">
     <Boxes className='mold-box'>
-        <div className='mold-box-header'><GiSwordMold/> {'Mold ' + i++} </div>
+        <div className='mold-box-header'><GiSwordMold className='mold-box-icon'/> {'Mold ' + i++} </div>
         <table className='mold-data-table'>
             <tbody>
                 <tr>

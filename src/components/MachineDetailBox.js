@@ -5,7 +5,7 @@ function MachineDetailBox() {
     return ( 
         <div>
             <Boxes className='machine-databox3'>
-                <div className='machine-databox3-header'>Machine Details</div>
+                <div className='machine-databox3-header'> <img src="machineIcon.png" class='mold-box-icon' alt="machine icon"/> Machine Details</div>
             </Boxes>
         </div>
     );

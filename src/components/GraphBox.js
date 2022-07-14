@@ -35,7 +35,7 @@ function GraphBox(props) {
 
     return ( 
         <div>
-            <Boxes className='machine-databox1'>
+            <Boxes className='mold-box'>
                 <Grid container justifyContent='center'>
                 <Grid item xs={6}>
                     <PieChart

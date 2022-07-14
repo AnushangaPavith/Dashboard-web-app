@@ -1,61 +1,176 @@
 import React from 'react';
 import Boxes from '@material-ui/core/Box';
 import InputField from '../components/InputField';
+import { useState, useEffect  } from 'react';
+import axios from '../auth/axios';
 
- function AddNewMachine() {
-//     const [id, setid]=useState("");
-//     const [num, setnum]=useState("");
-//     const [mat, setmat]=useState("");
-//     const [mak, setmak]=useState("");
-//     const history = useHistory();
+const ADD_MACHINE_URL = '/api/init';
 
-//     useEffect(() =>{
-//     if(localStorage.getItem('user-info')){
-//         history.push("/Home")
-//     }
+function AddNewMachine() {
+    const [machineId, setMachineId]=useState("");
+    const [moldID, setMoldID]=useState("");
+    const [moldShots, setMoldShots] = useState(null);
+    const [monaNo, setMonaNo] = useState("");
+    const [material, setMaterial] = useState("");
+    const [moldMaker, setMoldMaker] = useState("");
+    const [moldsData, setMoldsData] = useState([]);
 
-//    }, [])
+    // Fetch mold list from db
+    useEffect(() => {
+        fetch('http://localhost:3001/api/molds')
+        .then(results => {
+            return results.json()
+        })
+        .then(jsonData => {
+            setMoldsData(jsonData) 
+        });
+    }, []);
 
-    //async function login(){
-    //     console.warn(id, num, mat, mak);
-    //     let item={id, num, mat, mak};
-    //     let result = await fetch('http://localhost:3001/api/molds', {
-    //         method: 'POST',
-    //         headers:{
-    //             "Content-Type":"application/json",
-    //             "Accept":"application/json",
-    //         },
-    //         body:JSON.stringify(item)
-    //     });
+    // Create an array to select mold from available list
+    const menuItems = moldsData.map(mold => <option value={mold.moldID}>{mold.moldID}</option>);
 
-    //     result = await result.json();
-    //     localStorage.setItem("user-info", JSON.stringify(result));
-    //     history.push("/Home");
-    // }
+    // When a mold is selected, the Mold data will be automatically filled
+    const twoFunctions = (e) => {
+        setMoldID(e);
 
-    return ( 
+        // Find selected mold in molds list and assign values to relevant states
+        let selectedMold = moldsData.find(mold => mold.moldID === e);
+        if(selectedMold !== undefined) {
+            setMonaNo(selectedMold.monaNumber);
+            setMaterial(selectedMold.material);
+            setMoldMaker(selectedMold.moldMaker);
+        }
+    }
+
+    // Submit event
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post(ADD_MACHINE_URL, 
+                JSON.stringify(
+                    {
+                        machineID: machineId, 
+                        moldID: moldID, 
+                        moldShots: moldShots, 
+                        monaNumber: monaNo, 
+                        material: material,
+                        moldMaker: moldMaker
+                    }
+                ), 
+                {
+                    headers: { 'Content-Type' : 'application/json' }
+                }
+            );
+            
+            // When the request is success
+            if(response?.data?.status === 201) {
+                console.log(response?.data?.message);
+
+                // Reset all the fields
+                setMachineId('');
+                setMoldID('');
+                setMoldShots(null);
+                setMonaNo('');
+                setMaterial('');
+                setMoldMaker('');
+
+                // Add popup message
+            }
+
+        } catch (error) {
+            if(error?.response?.data?.status === 400){
+                // Almost all the errors goes here
+                console.log(error?.response?.data?.message);
+            }
+            else {
+                console.log(error?.response?.data?.message);
+            }
+
+            // Add popup for above cases
+        }
+
+    }
+
+    return (
         <div className='new-machine-container'>
-            <h1>Sample page...</h1>
             <Boxes className='new-machine-box'>
                 <div>
-                    <form>
-                        <label for="input1">Input1</label> <br/>
-                        <InputField type='text' placeholder='Input1'/><br/>
-
-                        <label for="input2">Input2</label><br/>
-                        <InputField type='text' placeholder='Input2'/><br/>
-
-                        <label for="input3">Input3</label><br/>
-                        <InputField type='text' placeholder='Input3'/><br/>
-
-                        <label for="input3">Input4</label><br/>
-                        <InputField type='text' placeholder='Input4'/><br/>
+                    <form onSubmit={handleSubmit} >
+                        <label for="Machine_ID">Machine ID</label> <br/>
+                        <InputField 
+                        type='text' 
+                        id="Machine_ID" 
+                        onChange={setMachineId}
+                        value={machineId} 
+                        placeholder='eg: D01'/>
                         
-                        <div className='add-btn-div'>
-                        <input type="submit" value="ADD"/>
-                        </div>
-                        
+                        <br/>
 
+                        <label for="Mold_ID">Mold ID</label><br/>
+                        <input 
+                        list='moldList' 
+                        id="Mold_ID" 
+                        className='input' 
+                        onChange={(e) => twoFunctions(e.target.value)} 
+                        autoComplete = 'off'
+                        value={moldID}
+                        placeholder='eg: m001'>
+                        </input>
+                        <datalist id="moldList">
+                            {menuItems}
+                        </datalist>
+                        
+                        <br/>
+
+                        <label for="Mold_Shots">Mold Shots</label><br/>
+                        <InputField 
+                        type='number' 
+                        id="Mold_Shots" 
+                        onChange={setMoldShots} 
+                        value={moldShots} 
+                        placeholder='Mold Shots'/>
+
+                        <br/>
+
+                        <label for="Mona_Number">Mona Number</label><br/>
+                        <InputField 
+                        type='text' 
+                        id="Mona_Number" 
+                        onChange={setMonaNo} 
+                        value={monaNo} 
+                        placeholder='eg: mona001'/>
+                        
+                        <br/>
+
+                        <label for="Material">Material</label><br/>
+                        <InputField 
+                        type='text' 
+                        id="Material" 
+                        onChange={setMaterial} 
+                        value={material} 
+                        placeholder='Material'/>
+                        
+                        <br/>
+
+                        <label for="Mold_Maker">Mold Maker</label><br/>
+                        <InputField 
+                        type='text' 
+                        id="Mold_Maker" 
+                        onChange={setMoldMaker} 
+                        value={moldMaker} 
+                        placeholder='Mold Maker'/>
+                        
+                        <br/>
+                        
+                        {/* <div className='btn'> */}
+                        {/* <input type="submit" value="ADD"/> */}
+                        {/* </div> */}
+
+                        <button className='add-btn-div'>
+                            Add
+                        </button> 
+                        
                     </form>
                 </div>
             </Boxes>

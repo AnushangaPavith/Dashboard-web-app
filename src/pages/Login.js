@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import useAuth from '../auth/UseAuth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from '../auth/axios';
 
 const LOGIN_URL = '/api/users/login';
@@ -27,7 +27,7 @@ const Login = () => {
     useEffect(() => {
         setErrMsg('');
     }, [user, pwd]);
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 

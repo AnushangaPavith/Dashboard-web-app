@@ -3,7 +3,7 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: e18-co227-Molding-Machine-Dashboard
+
 title: Molding Machine Dashboard
 ---
 # Molding Machine Dashboard

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import useAuth from '../auth/UseAuth';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Boxes from '@material-ui/core/Box';
 import axios from '../auth/axios';
 
 const LOGIN_URL = '/api/users/login';
@@ -70,6 +71,7 @@ const Login = () => {
 
     return (
             <div className='login-container'>
+            <Boxes className='login-box'>
             <h3>Login to your account</h3><br></br>
 
             <p ref={errRef} className={errMsg ? "errMsg" : "offScreen"} aria-live="assertive">{errMsg}</p>
@@ -100,6 +102,7 @@ const Login = () => {
                     Login
                 </button> 
             </form>
+            </Boxes>
         </div>
     )
 }

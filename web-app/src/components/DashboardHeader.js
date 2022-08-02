@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import LogoutPopUp from './LogoutPopUp';
 
 function DashboardHeader() {
     return (
@@ -16,6 +17,8 @@ function DashboardHeader() {
 function ChangePageName() {
     const currentPath = useLocation().pathname
     const data = useLocation().state;
+    const [openModel, setopenModel] = useState(false);
+
     console.log(currentPath)
     let pageText
 
@@ -35,8 +38,13 @@ function ChangePageName() {
     else if(currentPath === "/AddMachine" || currentPath === "/Addmachine" || currentPath === "/addmachine"){
         pageText = "Add Machine"
     }
+
     return(
-        <div>{pageText}</div>
+        <header className='center-header'>
+            {pageText}
+            <button className='logout-btn' onClick={() => setopenModel(true)}>Logout</button> 
+            {openModel && (<LogoutPopUp closeModel={() => setopenModel(false)} />)}
+        </header>
     );
 }
 

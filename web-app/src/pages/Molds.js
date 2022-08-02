@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import Boxes from '@material-ui/core/Box';
 import {Link} from 'react-router-dom';
 import { GiSwordMold } from "react-icons/gi";
+import MoldReportButton from '../components/MoldReportButton';
 
 function MoldsPage() {
 
@@ -44,7 +45,10 @@ function MoldsPage() {
     </Boxes></Link>)
 
     return (
-        <div className="mold-container"> {moldList} </div>
+        <div>
+            <div className="mold-container"> {moldList} </div>
+            <div className="mold-data-container"><MoldReportButton/></div>
+        </div>
     )
 
 }

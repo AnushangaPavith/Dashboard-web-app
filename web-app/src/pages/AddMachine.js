@@ -1,6 +1,7 @@
 import React from 'react';
 import Boxes from '@material-ui/core/Box';
 import InputField from '../components/InputField';
+import Model from '../components/MachineAddModel';
 import { useState, useEffect  } from 'react';
 import axios from '../auth/axios';
 
@@ -14,6 +15,7 @@ function AddNewMachine() {
     const [material, setMaterial] = useState("");
     const [moldMaker, setMoldMaker] = useState("");
     const [moldsData, setMoldsData] = useState([]);
+    const [openModel, setopenModel] = useState(false);
 
     // Fetch mold list from db
     useEffect(() => {
@@ -74,6 +76,7 @@ function AddNewMachine() {
                 setMonaNo('');
                 setMaterial('');
                 setMoldMaker('');
+                setopenModel(true);
 
                 // Add popup message
             }
@@ -121,6 +124,7 @@ function AddNewMachine() {
                             {menuItems}
                         </datalist>
                         
+                        <br/>
                         <br/>
 
                         <label for="Mold_Shots">Mold Shots</label><br/>
@@ -174,7 +178,11 @@ function AddNewMachine() {
                     </form>
                 </div>
             </Boxes>
+
+            {openModel && (<Model closeModel={() => setopenModel(false) }/>)}  
+
         </div>
+        
     );
 }
 

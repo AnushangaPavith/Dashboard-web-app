@@ -29,8 +29,8 @@ function GraphBox(props) {
     });
 
     const pieData = [
-        { title: "Succeeded count", value: prodCount-failCount, color: "#6A2135" },
-        { title: "Failed count", value: failCount, color: "#C13C37" }
+        { title: "Succeeded count", value: prodCount-failCount, color: "#C13C37" },
+        { title: "Failed count", value: failCount, color: "#FF6900" }
     ];
 
     return ( 
@@ -39,7 +39,7 @@ function GraphBox(props) {
                 <Grid container justifyContent='center'>
                 <Grid item xs={6}>
                     <PieChart
-                        center={[50, 50]}
+                        center={[40, 40]}
                         data={pieData}
                         lengthAngle={360}
                         lineWidth={50}
@@ -50,20 +50,21 @@ function GraphBox(props) {
                     />
                 </Grid>
                 <Grid>
+                    <br></br>
                     <ul>
                         <li key={"Suceeded count"}>
-                        <span
-                            style={{ backgroundColor: "#6A2135"}}
-                            className={"ChartLegend"}
-                        ></span>
-                        <b>{"Suceeded count"}:</b> {prodCount-failCount}
-                        </li>
-                        <li key={"Failed count"}>
                         <span
                             style={{ backgroundColor: "#C13C37"}}
                             className={"ChartLegend"}
                         ></span>
-                        <b>{"Failed count"}:</b> {failCount}
+                        <b > Suceeded count :{prodCount-failCount}</b>
+                        </li>
+                        <li key={"Failed count"}>
+                        <span
+                            style={{ backgroundColor: "#FF6900"}}
+                            className={"ChartLegend"}
+                        ></span>
+                        <b> Failed count : {failCount}</b>
                         </li>
                         
                     </ul>

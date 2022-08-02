@@ -96,7 +96,7 @@ function AddNewMachine() {
     }
 
     return (
-        <div className='new-machine-container'>
+        <div className='new-machine-container' data-testId="add-machine">
             <Boxes className='new-machine-box'>
                 <div>
                     <form onSubmit={handleSubmit} >

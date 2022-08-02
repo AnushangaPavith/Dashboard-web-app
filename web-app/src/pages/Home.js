@@ -38,12 +38,12 @@ function Homepage() {
     return (
         <div className="machine-container"> 
             {machineList} 
-            <Link to='/AddMachine'>
-            <Boxes className='machine-add-box'>
-                <div>
-                    <BsPlusLg className='machine-plus-icon'/>
-                </div>
-            </Boxes>
+            <Link to='/AddMachine' data-testId="add-machine-box-id">
+                <Boxes className='machine-add-box'>
+                    <div>
+                        <BsPlusLg className='machine-plus-icon'/>
+                    </div>
+                </Boxes>
             </Link>
         </div>
         

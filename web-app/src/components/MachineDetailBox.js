@@ -3,7 +3,7 @@ import Boxes from '@material-ui/core/Box';
 
 function MachineDetailBox() {
     return ( 
-        <div>
+        <div data-testId="MachineDetailBox1">
             <Boxes className='machine-databox3'>
                 <div className='machine-databox3-header'> <img src="machineIcon.png" class='mold-box-icon' alt="machine icon"/> Machine Details</div>
 

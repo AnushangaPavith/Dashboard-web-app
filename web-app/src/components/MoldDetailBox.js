@@ -27,7 +27,7 @@ function MoldDetailBox(props) {
     });
 
     return ( 
-        <Boxes className='machine-box4'>
+        <Boxes className='machine-box4' data-testId="DetailBox1">
             <table className='machine-data-table'>
                 <tbody>
                     <tr>

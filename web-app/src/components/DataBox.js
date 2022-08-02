@@ -32,7 +32,7 @@ function DataBox(props) {
     });
 
     return (
-        <Boxes className='mold-box'>
+        <Boxes className='mold-box' data-testId="DataBox1">
             <table className='machine-data-table'>
                 <tbody>
                     <tr>

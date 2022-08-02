@@ -4,7 +4,7 @@ import LogoutPopUp from './LogoutPopUp';
 
 function DashboardHeader() {
     return (
-        <nav  className="header">
+        <nav  className="header" data-testId="dashboard-header">
             <div>
                 <ChangePageName />
             </div>

@@ -47,7 +47,7 @@ const PDF = (props) =>{
     const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
     return(
-        <div  data-testId="PDFPage">
+        <>
         <div className="post" ref = {ref}>
             <div className="company-header"><SiReactos /> Company Name</div>
             <div className="report-header">Mold Statistics Report</div>
@@ -69,7 +69,7 @@ const PDF = (props) =>{
         </div>
         <Pdf targetRef={ref} filename="Moldreport.pdf">
             {({ toPdf }) => <button className='pdf-btn' onClick={toPdf}>Download pdf</button>}
-        </Pdf></div>
+        </Pdf></>
     
     );
 

@@ -1,13 +1,13 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import {BrowserRouter as Router} from 'react-router-dom';
-import MoldPDF from "../MoldPDF";
+import Molds from "../Molds";
 
 afterEach(() => { cleanup(); })
 
-test("render and count buttons", async () => {
+test("render and check all the labels", async () => {
     render(
         <Router>
-            <MoldPDF />
+            <Molds />
         </Router>);
     const buttonList = await screen.findAllByRole('button');
     expect(buttonList).toHaveLength(1);

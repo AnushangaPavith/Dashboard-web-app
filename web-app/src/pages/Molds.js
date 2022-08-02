@@ -45,7 +45,7 @@ function MoldsPage() {
     </Boxes></Link>)
 
     return (
-        <div>
+        <div data-testId="MoldsPage">
             <div className="mold-container"> {moldList} </div>
             <div className="mold-data-container"><MoldReportButton/></div>
         </div>

@@ -940,20 +940,25 @@ body {
 /* ----------------------------login------------------------------ */
 
 .login-container{
-  padding-top: 200px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .login-box{
   /* position: fixed; */
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-right: 30px;
-  /* top: 200px;
-  left: 500px; */
-  margin: 0 auto;
+  padding: 30px;
+  margin-top: 150px;
   outline: 2px;
   width: 300px;
-  height: 300px;
+  height: auto;
   font-size: 20px;
   box-sizing: content-box;
   /* background-color: white; */
@@ -991,7 +996,7 @@ body {
   width:100%;
   padding: 12px;
   font-size: 14px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   margin-top: 20px;
   background: rgba(168, 164, 164, 0.1);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -1000,13 +1005,10 @@ body {
   border-right: none;
 }
 
-/* .submitButton{
-  padding-top: 16px;
-} */
-
 .btn{
-  width: 100%;
+  width: 45%;
   font-size: 14px;
+  margin-top: 25px;
   padding: 12px;
   border-radius: 4px;
   background: rgba(168, 164, 164, 0.1);
@@ -1015,11 +1017,15 @@ body {
   border-right: none;
   border-bottom: none;
   color: white;
-  font-weight: bold;
+  font-weight: normal;
   transition: .4s;
 }
 .btn:hover{
   background: rgba(168, 164, 164, 0.5);
+}
+
+.btn:disabled {
+  pointer-events: none;
 }
 
 /* ------------------------------------------------------------------- */
@@ -1289,4 +1295,17 @@ body {
   padding-left: 250px;
   padding-top: 90px;
   top: 73px;
+}
+
+/* ################################# SignIn Page ######################### */
+.offScreen {
+  display: none;
+}
+
+.instructions {
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 5px;
 }

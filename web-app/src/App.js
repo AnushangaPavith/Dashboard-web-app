@@ -10,6 +10,8 @@ import MachineData from './pages/MachineData';
 import AddMachine from './pages/AddMachine';
 import Report from './pages/PDF';
 import MoldReport from './pages/MoldPDF';
+import Company from './pages/CompanyDetails';
+import SignUp from './pages/SignUp';
 import RequireAuth from './auth/RequireAuth';
 import {Routes, Route} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -22,6 +24,7 @@ function App() {
 
       <Routes>
       <Route path='/' element={<Login/>}/>
+      <Route path='/SignUp' element={<SignUp />} />
 
       <Route element={<RequireAuth />}>
         <Route path='/Home' element={<HomePage />} />
@@ -31,6 +34,7 @@ function App() {
         <Route path='/AddMachine' element={<AddMachine />} />
         <Route path='/Report' element={<Report/>}/>
         <Route path='/MoldReport' element={<MoldReport/>}/>
+        <Route path='/Company' element={<Company/>}/>
       </Route>
       </Routes>
 
@@ -43,6 +47,9 @@ export default App;
 function LayoutManager(){
   const currentPath = useLocation().pathname
   if (currentPath === '/'){
+    return <div><LoginHeader/></div>
+  }
+  else if (currentPath.toString().toUpperCase() === '/SIGNUP'){
     return <div><LoginHeader/></div>
   }
   else if (currentPath === '/Report'){

@@ -1,13 +1,13 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import {BrowserRouter as Router} from 'react-router-dom';
-import Login from "../Login";
+import SignUp from "../SignUp";
 
 afterEach(() => { cleanup(); })
 
 test("render and count input text fields", async () => {
     render(
         <Router>
-            <Login />
+            <SignUp />
         </Router>);
     const inputFields = await screen.findAllByRole('textbox')
     expect(inputFields).toHaveLength(1);
@@ -16,7 +16,7 @@ test("render and count input text fields", async () => {
 test("render and count password fields", async () => {
     render(
         <Router>
-            <Login />
+            <SignUp />
         </Router>);
     const passwordField = await screen.findAllByRole('textbox', { type: 'password' })
     expect(passwordField).toHaveLength(1);
@@ -25,16 +25,20 @@ test("render and count password fields", async () => {
 test("render and count buttons", async () => {
     render(
         <Router>
-            <Login />
+            <SignUp />
         </Router>);
     const buttonList = await screen.findAllByRole('button');
     expect(buttonList).toHaveLength(2);
 })
 
-test("render and take snapshot", async () => {
-    const { asFragment } = render(
+test("render and test onClick event", () => {
+    const { getByText, asFragment } = render(
         <Router>
-            <Login />
+            <SignUp />
         </Router>);
+
+    const button = getByText("Go Back");
+
+    fireEvent.click(button);
     expect(asFragment()).toMatchSnapshot();
 })

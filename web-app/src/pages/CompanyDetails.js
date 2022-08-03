@@ -13,22 +13,22 @@ function Company() {
 
             <Boxes className='company-box'>
                 About Us <br/>
-                <BsFillInfoCircleFill size={70}/>
+                <BsFillInfoCircleFill size={70} role='svg' />
             </Boxes>
 
             <Boxes className='company-box'>
                 People <br/>
-                <BsFillPeopleFill size={70}/>
+                <BsFillPeopleFill size={70} role='svg' />
             </Boxes>
 
             <Boxes className='company-box'>
                 Facilities <br/>
-                <FaBuilding size={70}/>
+                <FaBuilding size={70} role='svg' />
             </Boxes>
 
             <Boxes className='company-box'>
                 Join us <br/>
-                <BsPersonPlusFill size={70}/>
+                <BsPersonPlusFill size={70} role='svg' />
             </Boxes>
       
         </div>

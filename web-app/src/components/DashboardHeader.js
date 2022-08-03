@@ -19,7 +19,7 @@ function ChangePageName() {
     const data = useLocation().state;
     // const [openModel, setopenModel] = useState(false);
 
-    console.log(currentPath)
+    // console.log(currentPath)
     let pageText
 
     if (currentPath === "/") {

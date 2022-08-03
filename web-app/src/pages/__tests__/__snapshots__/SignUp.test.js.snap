@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render and test onClick event 1`] = `
+<DocumentFragment>
+  <div
+    class="login-container"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-4 login-box"
+    >
+      <h3>
+        Register
+      </h3>
+      <br />
+      <p
+        aria-live="assertive"
+        class="offScreen"
+      />
+      <form>
+        <input
+          aria-describedby="uidNote"
+          aria-invalid="true"
+          autocomplete="off"
+          class="input"
+          id="empId"
+          placeholder="Employee ID"
+          required=""
+          type="text"
+          value=""
+        />
+        <p
+          class="offScreen"
+          id="uidNote"
+        >
+          4 to 10 characters.
+          <br />
+          Must begin with a number.
+          <br />
+          Letters, Numbers are allowed.
+        </p>
+        <input
+          aria-describedby="pwdNote"
+          aria-invalid="true"
+          class="input"
+          id="password"
+          placeholder="Password"
+          required=""
+          type="password"
+          value=""
+        />
+        <p
+          class="offScreen"
+          id="pwdNote"
+        >
+          4 to 25 characters.
+          <br />
+          Must include a number.
+          <br />
+          Allowed special characters.
+        </p>
+        <input
+          aria-describedby="matchPwdNote"
+          aria-invalid="false"
+          class="input"
+          id="confirm_pwd"
+          placeholder="Confirm Password"
+          required=""
+          type="password"
+          value=""
+        />
+        <p
+          class="offScreen"
+          id="matchPwdNote"
+        >
+          Must match the first password input field.
+        </p>
+        <div
+          class="login-button-container"
+        >
+          <button
+            class="btn"
+            type="button"
+          >
+            Go Back
+          </button>
+          <button
+            class="btn"
+            disabled=""
+            type="submit"
+          >
+             Sign Up
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

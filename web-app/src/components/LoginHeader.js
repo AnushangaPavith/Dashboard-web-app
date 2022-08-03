@@ -3,7 +3,7 @@ import { SiReactos } from "react-icons/si";
 
 function LoginHeader(){
     return <div className='login-header'>
-        <header><SiReactos /> Company Name</header>
+        <header><SiReactos />MONA Plastics</header>
     </div>
 }
 

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render and take snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="machine-container"
+    data-testid="add-machine-box-id"
+  >
+    <a
+      href="/AddMachine"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-1 machine-add-box"
+      >
+        <div>
+          <svg
+            class="machine-plus-icon"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
+            />
+          </svg>
+        </div>
+      </div>
+    </a>
+    <div
+      class="logout-btn-div"
+    >
+      <button
+        class="logout-btn"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

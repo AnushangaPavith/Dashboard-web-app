@@ -13,6 +13,7 @@ const Login = () => {
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/Home";
+    const signUpForm = location.state?.signUpForm?.pathname || "/SignUp";
 
     const userRef = useRef();
     const errRef = useRef();
@@ -59,7 +60,7 @@ const Login = () => {
             if(!error?.response) {
                 setErrMsg('No Server Response.');
             } else if(error.response?.status === 400) {
-                setErrMsg("Missing Data.");
+                setErrMsg("Invalid username or password.");
             } else if(error.response?.status === 401) {
                 setErrMsg("Unauthorized.");
             } else {
@@ -67,6 +68,11 @@ const Login = () => {
             }
             errRef.current.focus();
         }
+    }
+
+    const goToSingUp = async (e) => {
+        e.preventDefault();
+        navigate(signUpForm, { replace: true });
     }
 
     return (
@@ -98,9 +104,10 @@ const Login = () => {
                     required
                 />
 
-                <button className='btn'>
-                    Login
-                </button> 
+                <div className='login-button-container'>
+                    <button className='btn' type='button' onClick={goToSingUp}>Sign Up</button>
+                    <button className='btn' type='submit'>Login</button>
+                </div>
             </form>
             </Boxes>
         </div>

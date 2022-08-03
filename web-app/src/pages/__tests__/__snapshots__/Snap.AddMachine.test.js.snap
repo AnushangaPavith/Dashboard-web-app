@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render and take snapshot of add machine page 1`] = `
+<DocumentFragment>
+  <div
+    class="new-machine-container"
+    data-testid="add-machine"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-1 new-machine-box"
+    >
+      <div>
+        <form>
+          <label
+            for="Machine_ID"
+          >
+            Machine ID
+          </label>
+           
+          <br />
+          <div
+            class="inputField"
+          >
+            <input
+              class="input"
+              placeholder="eg: D01"
+              type="text"
+              value=""
+            />
+          </div>
+          <br />
+          <label
+            for="Mold_ID"
+          >
+            Mold ID
+          </label>
+          <br />
+          <input
+            autocomplete="off"
+            class="input"
+            id="Mold_ID"
+            list="moldList"
+            placeholder="eg: m001"
+            value=""
+          />
+          <datalist
+            id="moldList"
+          />
+          <br />
+          <br />
+          <label
+            for="Mold_Shots"
+          >
+            Mold Shots
+          </label>
+          <br />
+          <div
+            class="inputField"
+          >
+            <input
+              class="input"
+              placeholder="Mold Shots"
+              type="number"
+              value=""
+            />
+          </div>
+          <br />
+          <label
+            for="Mona_Number"
+          >
+            Mona Number
+          </label>
+          <br />
+          <div
+            class="inputField"
+          >
+            <input
+              class="input"
+              placeholder="eg: mona001"
+              type="text"
+              value=""
+            />
+          </div>
+          <br />
+          <label
+            for="Material"
+          >
+            Material
+          </label>
+          <br />
+          <div
+            class="inputField"
+          >
+            <input
+              class="input"
+              placeholder="Material"
+              type="text"
+              value=""
+            />
+          </div>
+          <br />
+          <label
+            for="Mold_Maker"
+          >
+            Mold Maker
+          </label>
+          <br />
+          <div
+            class="inputField"
+          >
+            <input
+              class="input"
+              placeholder="Mold Maker"
+              type="text"
+              value=""
+            />
+          </div>
+          <br />
+          <button
+            class="add-btn-div"
+          >
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

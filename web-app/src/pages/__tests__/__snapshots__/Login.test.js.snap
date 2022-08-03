@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render and take snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="login-container"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-4 login-box"
+    >
+      <h3>
+        Login to your account
+      </h3>
+      <br />
+      <p
+        aria-live="assertive"
+        class="offScreen"
+      />
+      <form>
+        <input
+          class="input"
+          id="username"
+          placeholder="Employee ID"
+          required=""
+          type="text"
+          value=""
+        />
+        <input
+          class="input"
+          id="password"
+          placeholder="Password"
+          required=""
+          type="password"
+          value=""
+        />
+        <div
+          class="login-button-container"
+        >
+          <button
+            class="btn"
+            type="button"
+          >
+            Sign Up
+          </button>
+          <button
+            class="btn"
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

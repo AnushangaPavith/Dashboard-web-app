@@ -1,7 +1,36 @@
-import React from 'react';
 import Boxes from '@material-ui/core/Box';
+import React, {useEffect, useState} from 'react';
 
-function MachineDetailBox() {
+function MachineDetailBox(props) {
+
+     // Assign machine ID
+     const machineId = props.ID
+
+     // Get machine data from the API
+     const [machine, setMachine] = useState([])
+     useEffect(() => {
+         if(machineId !== undefined) {
+             fetch('http://localhost:3001/api/machines/'+ machineId)
+             .then(results => {
+                 return results.json()
+             })
+             .then(jsonData => {
+                 setMachine(jsonData) 
+             });
+         }
+     }, [machineId]);
+
+    let ejectorPosition,cycleTime,coolingTime,position,pressure,rotSpeed;
+
+    machine.map(m => {
+        ejectorPosition = m.Ejector_position
+        cycleTime = m.Cycle_time
+        coolingTime = m.Cooling_time
+        position = m.Actual_position
+        pressure = m.Actual_pressure
+        rotSpeed = m.Actual_rot_speed
+    })
+ 
     return ( 
         <div data-testId="MachineDetailBox1">
             <Boxes className='machine-databox3'>
@@ -26,14 +55,14 @@ function MachineDetailBox() {
                             </div>
                         </td>
                         <td className='label-text-2'>Ejector Position:</td>
-                        <td><Boxes className='machine-dbox3'></Boxes></td>
+                        <td><Boxes className='machine-dbox3'>{ejectorPosition} mm</Boxes></td>
                     </tr>
 
                     <tr>
                         <td className='label-text-2'>Cycle Time:</td>
-                        <td><Boxes className='machine-dbox3'>test</Boxes></td>
+                        <td><Boxes className='machine-dbox3'>{cycleTime} sec</Boxes></td>
                         <td className='label-text-2'>Cooling Time:</td>
-                        <td><Boxes className='machine-dbox3'></Boxes></td>
+                        <td><Boxes className='machine-dbox3'>{coolingTime} sec</Boxes></td>
                     </tr>
 
                     {/* <tr>
@@ -60,17 +89,17 @@ function MachineDetailBox() {
 
                     <tr>
                         <td>Actual Position:</td>
-                        <td><Boxes className='injection-dbox3'>test</Boxes></td>
+                        <td><Boxes className='injection-dbox3'>{position} mm</Boxes></td>
                     </tr>
 
                     <tr>
                         <td>Actual Pressure:</td>
-                        <td><Boxes className='injection-dbox3'></Boxes></td>
+                        <td><Boxes className='injection-dbox3'>{pressure} bar</Boxes></td>
                     </tr>
 
                     <tr>
                         <td>Actual Rot. Speed:</td>
-                        <td><Boxes className='injection-dbox3'></Boxes></td>
+                        <td><Boxes className='injection-dbox3'>{rotSpeed} mm</Boxes></td>
                     </tr>
 
                 </tbody>

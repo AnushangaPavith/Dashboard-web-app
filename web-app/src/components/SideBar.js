@@ -10,7 +10,7 @@ function SideBar () {
     // const [openModel, setopenModel] = useState(false);
     return (
         <div className='sidebar'>
-            <header><SiReactos /> Company Name</header>
+            <header><SiReactos />MONA Plastics</header>
             <ul>
                 <ActivePageLink to= "/Home"><MdSpaceDashboard /> Dashboard</ActivePageLink>
                 <ActivePageLink to= "/Molds"><AiFillDatabase /> Production Data</ActivePageLink>

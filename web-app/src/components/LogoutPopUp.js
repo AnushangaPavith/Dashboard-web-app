@@ -6,8 +6,8 @@ import Logout from './LogoutBtn';
 function LogoutPopUp( {closeModel} ){
 
   return (
-    <div className='overlay'>
-    <Boxes className='pop-up-box'>
+    <div className='overlay-logout'>
+    <Boxes className='pop-up-box-logout'>
         <br />
         Do you want to Logout?<br/>
         <div className='machine-add-popup-btn'>

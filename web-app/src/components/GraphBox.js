@@ -52,12 +52,12 @@ function GraphBox(props) {
                 <Grid>
                     <br></br>
                     <ul>
-                        <li key={"Succeeded count"}>
+                        <li key={"Suceeded count"}>
                         <span
                             style={{ backgroundColor: "#C13C37"}}
                             className={"ChartLegend"}
                         ></span>
-                        <b > Succeeded count :{prodCount-failCount}</b>
+                        <b > Suceeded count :{prodCount-failCount}</b>
                         </li>
                         <li key={"Failed count"}>
                         <span

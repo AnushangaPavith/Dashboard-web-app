@@ -3,10 +3,10 @@ import {useEffect, useState} from 'react';
 import Boxes from '@material-ui/core/Box';
 import { BsPlusLg } from "react-icons/bs";
 import {Link} from 'react-router-dom';
-
+import LogoutPopUp from '../components/LogoutPopUp';
 
 function Homepage() {
-
+    const [openModel, setopenModel] = useState(false);
     const [machines, setMachines] = useState([])
 
     useEffect(() => {
@@ -36,15 +36,21 @@ function Homepage() {
     // 'state' in Link tag sends machine ID to the page that linked
 
     return (
-        <div className="machine-container"> 
+        <div className="machine-container" data-testId="add-machine-box-id"> 
             {machineList} 
-            <Link to='/AddMachine' data-testId="add-machine-box-id">
-                <Boxes className='machine-add-box'>
-                    <div>
-                        <BsPlusLg className='machine-plus-icon'/>
-                    </div>
-                </Boxes>
+            <Link to='/AddMachine'>
+            <Boxes className='machine-add-box'>
+                <div>
+                    <BsPlusLg className='machine-plus-icon'/>
+                </div>
+            </Boxes>
             </Link>
+
+            <div className='logout-btn-div'>
+            <button className='logout-btn' onClick={() => setopenModel(true)}>Logout</button>  
+            {openModel && (<LogoutPopUp closeModel={() => setopenModel(false)} />)}
+            </div>
+
         </div>
         
     )

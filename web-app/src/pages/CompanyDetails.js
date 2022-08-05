@@ -10,11 +10,12 @@ function Company() {
 
     return (
         <div className="company-container"> 
-
-            <Boxes className='company-box'>
-                About Us <br/>
-                <BsFillInfoCircleFill size={70} role='svg' />
-            </Boxes>
+            <a href='http://www.mona.lk/' target="_blank">
+                <Boxes className='company-box'>
+                    About Us <br/>
+                    <BsFillInfoCircleFill size={70} role='svg' />
+                </Boxes>
+            </a>
 
             <Boxes className='company-box'>
                 People <br/>

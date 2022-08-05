@@ -99,7 +99,7 @@ function MachineDetailBox(props) {
 
                     <tr>
                         <td>Actual Rot. Speed:</td>
-                        <td><Boxes className='injection-dbox3'>{rotSpeed} mm</Boxes></td>
+                        <td><Boxes className='injection-dbox3'>{rotSpeed} rpm</Boxes></td>
                     </tr>
 
                 </tbody>

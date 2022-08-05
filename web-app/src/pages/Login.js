@@ -76,13 +76,13 @@ const Login = () => {
     }
 
     return (
-            <div className='login-container'>
+            <div className='login-container' id='container'>
             <Boxes className='login-box'>
             <h3>Login to your account</h3><br></br>
 
             <p ref={errRef} className={errMsg ? "errMsg" : "offScreen"} aria-live="assertive">{errMsg}</p>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id='loginForm'>
                 <input
                     className="input"
                     type= 'text'
@@ -106,7 +106,7 @@ const Login = () => {
 
                 <div className='login-button-container'>
                     <button className='btn' type='button' onClick={goToSingUp}>Sign Up</button>
-                    <button className='btn' type='submit'>Login</button>
+                    <button className='btn' type='submit' id='submitBtn'>Login</button>
                 </div>
             </form>
             </Boxes>

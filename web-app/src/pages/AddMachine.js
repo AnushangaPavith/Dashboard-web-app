@@ -171,7 +171,7 @@ function AddNewMachine() {
                         {/* <input type="submit" value="ADD"/> */}
                         {/* </div> */}
 
-                        <button className='add-btn-div'>
+                        <button className='add-btn-div' id='add-machine-submit'>
                             Add
                         </button> 
                         

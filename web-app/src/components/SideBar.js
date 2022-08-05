@@ -10,10 +10,10 @@ function SideBar () {
     // const [openModel, setopenModel] = useState(false);
     return (
         <div className='sidebar'>
-            <header><SiReactos />MONA Plastics</header>
+            <header><SiReactos /> Mona Sri Lanka</header>
             <ul>
-                <ActivePageLink to= "/Home"><MdSpaceDashboard /> Dashboard</ActivePageLink>
-                <ActivePageLink to= "/Molds"><AiFillDatabase /> Production Data</ActivePageLink>
+                <ActivePageLink to= "/Home" id="home-btn"><MdSpaceDashboard /> Dashboard</ActivePageLink>
+                <ActivePageLink to= "/Molds" id="molds-btn"><AiFillDatabase /> Production Data</ActivePageLink>
                 <ActivePageLink to= "/Company"><RiDatabaseFill /> Company Details</ActivePageLink>
             </ul>
         </div>
@@ -25,7 +25,7 @@ function ActivePageLink({to, children, ...props}) {
     const isActive = useMatch({path: resolvedPath.pathname, end: true})
 
     return(
-        <li className={isActive ? "active" : ""}>
+        <li className={isActive ? "active" : ""} id={props.id}>
             <Link to={to} {...props}>
                 {children}
             </Link>

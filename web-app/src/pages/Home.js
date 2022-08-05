@@ -39,7 +39,7 @@ function Homepage() {
         <div className="machine-container" data-testId="add-machine-box-id"> 
             {machineList} 
             <Link to='/AddMachine'>
-            <Boxes className='machine-add-box'>
+            <Boxes className='machine-add-box' id='add-machine-btn'>
                 <div>
                     <BsPlusLg className='machine-plus-icon'/>
                 </div>

@@ -57,17 +57,15 @@ The Dashboard will have several key interfaces; an overview page of all the mach
 
 ### User Interfaces
 <p align="center"> 
-  <img src = "images/pg-1.jpg" width="400"> 
-  <img src = "images/pg-2.jpg" width="400"> 
-</p>
-
-<p align="center"> 
-  <img src = "images/pg-3.jpg" width="400"> 
-  <img src = "images/pg-4.jpg" width="400"> 
-</p>
-
-<p align="center"> 
-  <img src = "images/pg-5.jpg" width="400"> 
+  <img src = "images/pg-1.jpg" width="800"> 
+  
+  <img src = "images/pg-2.jpg" width="800"> 
+  
+  <img src = "images/pg-3.jpg" width="800"> 
+  
+  <img src = "images/pg-4.jpg" width="800"> 
+  
+  <img src = "images/pg-5.jpg" width="800"> 
 </p>
 
 ---

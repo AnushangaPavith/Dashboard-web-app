@@ -1,0 +1,37 @@
+{
+  "name": "apis",
+  "version": "1.0.0",
+  "description": "APIs for Analysis Tool for Industrial Images App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cepdnaclk/e17-co328-Analysis-Tool-for-Industrial-Images.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cepdnaclk/e17-co328-Analysis-Tool-for-Industrial-Images/issues"
+  },
+  "homepage": "https://github.com/cepdnaclk/e17-co328-Analysis-Tool-for-Industrial-Images#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.8",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.5.1",
+    "util": "^0.12.4"
+  }
+}
